@@ -1,10 +1,11 @@
 <template>
   <div id="single-blog">
       <h1 class="hed">{{blog.title}}</h1>
-      <p>{{blog.time}}</p>
-      <article>{{blog.content}}</article>
-      <button @click="deleteSingleBlog()">删除</button>
-      <router-link :to="'/edit/' +id">编辑</router-link>
+      <p class="time">{{blog.time}}</p>
+      <!-- <article>{{blog.content}}</article> -->
+      <article v-html="blog.content"></article>
+      <button class="btn" @click="deleteSingleBlog()">删除</button>
+      <router-link class="link" :to="'/edit/' +id">编辑</router-link>
       <div class="comment">
         <p>Thanks For Reading</p>
         <h2>comments:</h2>
@@ -18,7 +19,7 @@
         <h2>Talk with author :</h2>
         <input type="text" v-model="comments.email" placeholder="leave your email">
         <textarea v-model="comments.comment"></textarea>
-        <button @click="addComment">提交</button>
+        <button class="btn" @click="addComment">提交</button>
       </div>
   </div>
 </template>
@@ -82,22 +83,22 @@ export default {
   border: 1px solid #eee;
   border-radius: 8px;
 }
-#single-blog h1 {
+#single-blog .hed {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 12px;
 }
-#single-blog p {
+#single-blog .time {
   text-align: center;
   opacity: 0.7;
   margin-bottom: 16px;
 }
 #single-blog article {
-  text-indent: 2em;
+  /* text-indent: 2em; */
   word-break: break-all;
 }
-#single-blog button {
+#single-blog .btn {
   display: inline-block;
   margin: 20px 10px;
   background: crimson;
@@ -108,7 +109,7 @@ export default {
   font-size: 18px;
   cursor: pointer;
 }
-#single-blog a {
+#single-blog .link {
   display: inline-block;
   margin: 20px auto;
   background: crimson;

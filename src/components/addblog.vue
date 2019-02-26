@@ -5,7 +5,17 @@
       <label>博客标题</label>
       <input type="text" v-model="blog.title" required>
       <label>博客内容</label>
-      <textarea v-model="blog.content"></textarea>
+      <!-- <textarea v-model="blog.content"></textarea> -->
+      <div class="edit_container">
+      <quill-editor
+        v-model="blog.content"
+        ref="myQuillEditor"
+        :options="editorOption"
+        @blur="onEditorBlur($event)"
+        @focus="onEditorFocus($event)"
+        @change="onEditorChange($event)"
+      ></quill-editor>
+    </div>
       <div id="checkboxes">
         <label>Vue</label>
         <input type="checkbox" value="Vue" v-model="blog.categories">
@@ -40,10 +50,15 @@
 
 <script>
 import axios from "axios";
+import { quillEditor } from "vue-quill-editor"; //调用编辑器
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";
+import "quill/dist/quill.bubble.css";
 export default {
   name: "addblog",
   data() {
     return {
+      editorOption: {},
       blog: {
         title: "",
         content: "",
@@ -63,11 +78,22 @@ export default {
     this.comments = [];
   },
   methods: {
-    post: function() {
+    post() {
       axios.post("/post.json", this.blog).then(data => {
         console.log(data);
         this.submmited = true;
       });
+    },
+    onEditorReady(editor) {
+      // 准备编辑器
+    },
+    onEditorBlur() {}, // 失去焦点事件
+    onEditorFocus() {}, // 获得焦点事件
+    onEditorChange() {} // 内容改变事件
+  },
+  computed: {
+    editor() {
+      return this.$refs.myQuillEditor.quill;
     }
   }
 };
@@ -96,6 +122,9 @@ select {
 textarea {
   height: 200px;
 }
+#checkboxes{
+  margin-top: 100px;
+}
 #checkboxes label {
   display: inline-block;
   margin-top: 0;
@@ -122,5 +151,23 @@ button {
 }
 h3 {
   margin-top: 10px;
+}
+.quill-editor {
+  height: 745px;
+}
+
+.limit {
+  height: 30px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  text-align: right;
+}
+
+.ql-snow .ql-editor img {
+  max-width: 480px;
+}
+
+.ql-editor .ql-video {
+  max-width: 480px;
 }
 </style>
