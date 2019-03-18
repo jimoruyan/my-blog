@@ -55,6 +55,7 @@ export default {
   max-width: 800px;
   margin: 0 auto;
   cursor: pointer;
+  user-select:none
 }
 .single-blog {
   padding: 12px;

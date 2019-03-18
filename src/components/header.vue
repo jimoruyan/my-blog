@@ -45,6 +45,7 @@ img{
 }
 ul {
   text-align: center;
+  user-select:none
 }
 li {
   display: inline-block;

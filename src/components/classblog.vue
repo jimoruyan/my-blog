@@ -84,12 +84,12 @@ export default {
   max-width: 800px;
   margin: 0 auto;
   box-sizing: border-box;
+  user-select:none;
   .category {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
     padding: 5px;
-
     span {
       padding: 3px 8px;
       color: #888;
