@@ -43,6 +43,7 @@ export default {
           blogsArray.push(data[key]);
         }
         this.blogs = blogsArray;
+        // console.log(this.blogs)
       });
     axios
       .get("/categoriy.json")
@@ -74,7 +75,6 @@ export default {
   methods: {
     changeclass: function(fl) {
       this.search = fl;
-      console.log(fl);
     }
   }
 };

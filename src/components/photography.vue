@@ -1,16 +1,16 @@
 <template>
   <div id="photo">
-    <!-- <div class="images">
-      <img class="pic pic1" src="../assets/images/temo.jpg">
-      <img class="pic pic2" src="../assets/images/p2.jpg">
-      <img class="pic pic3" src="../assets/images/p3.jpg">
-      <img class="pic pic4" src="../assets/images/p5.jpg">
-      <img class="pic pic5" src="../assets/images/p4.jpg">
-      <img class="pic pic6" src="../assets/images/p6.jpg">
-      <img class="pic pic7" src="../assets/images/p7.jpg">
+    <div class="images">
+      <img class="pic pic1" src="../assets/images/1.jpg">
+      <img class="pic pic2" src="../assets/images/2.jpg">
+      <img class="pic pic3" src="../assets/images/3.jpg">
+      <img class="pic pic4" src="../assets/images/4.jpg">
+      <img class="pic pic5" src="../assets/images/5.jpg">
+      <img class="pic pic6" src="../assets/images/6.jpg">
+      <img class="pic pic7" src="../assets/images/7.jpg">
       <img class="pic pic8" src="../assets/images/8.jpg">
       <img class="pic pic9" src="../assets/images/9.jpg">
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
@@ -30,7 +30,7 @@ export default {
 }
 
 .pic {
-  width: 160px;
+  width: 220px;
 }
 .images img:hover {
   box-shadow: 15px 15px 20px rgba(50, 50, 50, 0.4);
@@ -67,14 +67,14 @@ export default {
   -webkit-transform: rotate(-20deg);
 }
 .pic3 {
-  top: 220px;
-  right: 80px;
+  top: 230px;
+  right: 30px;
   transform: rotate(5deg);
   -webkit-transform: rotate(5deg);
 }
 
 .pic4 {
-  top: 100px;
+  top: 200px;
   left: 300px;
   transform: rotate(-10deg);
   -webkit-transform: rotate(-10deg);
@@ -82,7 +82,7 @@ export default {
 
 .pic5 {
   top: 20px;
-  right: 150px;
+  right: 100px;
   transform: rotate(-10deg);
   -webkit-transform: rotate(-10deg);
 }
@@ -100,14 +100,14 @@ export default {
   -webkit-transform: rotate(20deg);
 }
 .pic8 {
-  bottom: -20px;
+  left: 100px;
   top: 250px;
   transform: rotate(5deg);
   -webkit-transform: rotate(5deg);
 }
 .pic9 {
-  left: 550px;
-  top: 90px;
+  left: 450px;
+  top: 190px;
   transform: rotate(15deg);
   -webkit-transform: rotate(15deg);
 }
@@ -116,6 +116,7 @@ export default {
   transform: rotate(0deg) scale(2.2);
   -webkit-transform: rotate(0deg) scale(2.2);
   z-index: 1000;
+  width: 400px;
 }
 </style>
 

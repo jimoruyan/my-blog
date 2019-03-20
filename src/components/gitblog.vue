@@ -3,7 +3,7 @@
     <input type="text" v-model="search" placeholder="搜索">
 
     <div class="single-blog" v-for="(blog,index) in filteredBlogs" :key="index">
-      <a href="https:wwww.baidu.com" target="_blank">
+      <a :href="blog.blog_src" target="_blank">
         <h2>{{blog.title}}</h2>
         <ul>
           <li v-for="(category,index) in blog.categories" :key="index">{{category}}</li>
@@ -39,6 +39,7 @@ export default {
           blogsArray.push(data[key]);
         }
         this.blogs = blogsArray;
+        console.log(this.blogs)
       });
   },
   computed: {
