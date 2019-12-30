@@ -3,15 +3,17 @@
     <div class="category">
       <span
         @click="changeclass(categores)"
-        v-for="(categores,index) in categoriy"
+        v-for="(categores,index) in ['javascript','css','html','vue','other']"
         :key="index"
       >{{categores}}</span>
     </div>
-    <div class="single-blog" v-for="(blog,index) in filteredBlogs" :key="index">
+    <div class="single-blog" v-for="(blog,index) in filteredBlogs"
+     :key="index">
       <router-link v-bind:to="'/blog/'+blog.id">
         <h2>{{blog.title}}</h2>
         <ul>
-          <li v-for="(category,index) in blog.categories" :key="index">{{category}}</li>
+          <li v-for="(category,index) in blog.categories"
+           :key="index">{{category}}</li>
         </ul>
         <p>{{blog.time}}</p>
       </router-link>
@@ -38,27 +40,28 @@ export default {
       })
       .then(data => {
         var blogsArray = [];
+        //  console.log(data)
         for (let key in data) {
           data[key].id = key;
           blogsArray.push(data[key]);
         }
         this.blogs = blogsArray;
-        // console.log(this.blogs)
       });
-    axios
-      .get("/categoriy.json")
-      .then(data => {
-        return data.data;
-      })
-      .then(data => {
-        let categoriyArray = [];
-        for (let key in data) {
-          data[key].id = key;
-          categoriyArray.push(data[key]);
-        }
-        this.categoriy = categoriyArray[0];
-      });
+    // axios
+    //   .get("/categoriy.json")
+    //   .then(data => {
+    //     return data.data;
+    //   })
+    //   .then(data => {
+    //     let categoriyArray = [];
+    //     for (let key in data) {
+    //       data[key].id = key;
+    //       categoriyArray.push(data[key]);
+    //     }
+    //     this.categoriy = categoriyArray[0];
+    //   });
   },
+  
   computed: {
     filteredBlogs: function() {
       let newblog = [];

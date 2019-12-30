@@ -9,8 +9,8 @@
         <router-link to="/git" exact>开源</router-link>
         <router-link to="/photo" exact>摄影</router-link>
         <router-link to="/about" exact>关于</router-link>
-        <router-link to="/add" exact>增加</router-link>
-        <router-link to="/addgit" exact>git</router-link>
+        <router-link to="/add"  exact>增加</router-link>
+        <router-link to="/addgit"  exact>git</router-link>
       </li>
     </ul>
   </nav>

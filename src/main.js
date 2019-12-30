@@ -12,7 +12,9 @@ Vue.use(VueQuillEditor)
 
 
 // 全局配置
-axios.defaults.baseURL = 'https://wd8910585934yneopr.wilddogio.com'
+// axios.defaults.baseURL = 'https://wd8910585934yneopr.wilddogio.com'
+axios.defaults.baseURL = 'https://my-blog-c0559.firebaseio.com/n'
+
 
 const router = new VueRouter({
   routes:Routes,

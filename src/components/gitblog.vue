@@ -39,7 +39,7 @@ export default {
           blogsArray.push(data[key]);
         }
         this.blogs = blogsArray;
-        console.log(this.blogs)
+        // console.log(this.blogs)
       });
   },
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <p>大四实习</p>
+    <p></p>
     <p>Blog Powered By vue</p>
     <p>E-mail: chengyong.wang@baisonmail.com</p>
 

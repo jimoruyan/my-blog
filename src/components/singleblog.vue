@@ -4,8 +4,8 @@
       <p class="time">{{blog.time}}</p>
       <!-- <article>{{blog.content}}</article> -->
       <article v-html="blog.content"></article>
-      <button class="btn" @click="deleteSingleBlog()">删除</button>
-      <router-link class="link" :to="'/edit/' +id">编辑</router-link>
+      <button class="btn"  @click="deleteSingleBlog()">删除</button>
+      <router-link class="link"  :to="'/edit/' +id">编辑</router-link>
       <div class="comment">
         <p>Thanks For Reading</p>
         <h2>comments:</h2>
